@@ -19,3 +19,23 @@ function registrar(){
     // ..
   });
 }
+
+
+function login(){
+  var email1 = document.getElementById('email1').value;
+    var pass1 = document.getElementById('pass1').value;
+
+    firebase.auth().signInWithEmailAndPassword(email1, pass1)
+  .then((userCredential) => {
+    // Signed in
+    console.log("Usuario inicio Sesion")
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode," Codigo de Error")
+    console.log(errorMessage)
+    // ..
+  });
+}
